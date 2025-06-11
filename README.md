@@ -58,15 +58,13 @@ Deve aparecer algo como `Python 3.10.12`
 ## 3. Configurar o OrcaSlicer
 
 1. Abre o **OrcaSlicer**
-2. Vai ao menu **"Configurações da impressora"**
-3. Seleciona a tua impressora e vai à aba **"G-code"**
+2. Vai ao menu **"Processo"**
+3. Seleciona a tua impressora e vai à aba **"Outros"**
 4. Desce até encontrar **"Script de pós-processamento"**
 
-### Ativa o script externo:
-- Marca: ✅ "Usar script externo"
 - No campo ao lado, coloca o caminho completo, por exemplo:
 ```
-C:\UtilitariosOrca\Orca2BBL.py
+C:\Users\YOURUSER\AppData\Local\Programs\Python\Python313\python.exe C:\orca2bbl\Orca2BBL.py C:\UtilitariosOrca\Orca2BBL.py
 ```
 
 > Em macOS/Linux, o caminho pode ser algo como `/home/usuario/scripts/Orca2BBL.py`
