@@ -1,10 +1,13 @@
 # OrcaSlicer Post-processing script: Modifica Header e adiciona linha antes do Spaghetti Detector
-import os
+import sys
 
-input_file = os.environ['INPUT_FILE']
-output_file = os.environ['OUTPUT_FILE']
+if len(sys.argv) < 2:
+    print("Erro: caminho para o ficheiro G-code não fornecido.")
+    sys.exit(1)
 
-with open(input_file, 'r', encoding='utf-8') as f:
+gcode_path = sys.argv[1]
+
+with open(gcode_path, 'r', encoding='utf-8') as f:
     lines = f.readlines()
 
 new_lines = []
@@ -24,5 +27,6 @@ for line in lines:
 
     new_lines.append(line)
 
-with open(output_file, 'w', encoding='utf-8') as f:
+# Escrever de volta no mesmo ficheiro
+with open(gcode_path, 'w', encoding='utf-8') as f:
     f.writelines(new_lines)
